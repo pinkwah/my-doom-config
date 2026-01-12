@@ -48,15 +48,18 @@
       ];
     };
 
-    doom-emacs = system: pname: (pkgs-with-overlays system).doomEmacs {
+    doom-emacs = system: pname:
+    let pkgs = pkgs-with-overlays system; in pkgs.emacsWithDoom {
       doomDir = ./.;
       doomLocalDir = "~/.local/share/pinkwah/doom-emacs";
+      emacs = pkgs.${pname};
+      lspUsePlists = true;
     };
 
   in {
-    packages.x86_64-linux.default = doom-emacs "x86_64-linux" "doom30-pgtk";
-    packages.x86_64-linux.emacs = doom-emacs "x86_64-linux" "doom30";
-    packages.aarch64-linux.default = doom-emacs "aarch64-linux" "doom30-pgtk";
-    packages.aarch64-darwin.default = doom-emacs "aarch64-darwin" "doom30-macports";
+    packages.x86_64-linux.default = doom-emacs "x86_64-linux" "emacs30-pgtk";
+    packages.x86_64-linux.emacs = doom-emacs "x86_64-linux" "emacs30";
+    packages.aarch64-linux.default = doom-emacs "aarch64-linux" "emacs30-pgtk";
+    packages.aarch64-darwin.default = doom-emacs "aarch64-darwin" "emacs30-macports";
   };
 }
