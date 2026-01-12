@@ -60,6 +60,6 @@
     packages.x86_64-linux.default = doom-emacs "x86_64-linux" "emacs30-pgtk";
     packages.x86_64-linux.emacs = doom-emacs "x86_64-linux" "emacs30";
     packages.aarch64-linux.default = doom-emacs "aarch64-linux" "emacs30-pgtk";
-    packages.aarch64-darwin.default = doom-emacs "aarch64-darwin" "emacs30-macports";
+    packages.aarch64-darwin.default = doom-emacs "aarch64-darwin" "emacs30-macport";
   };
 }
