@@ -54,6 +54,7 @@
       doomLocalDir = "~/.local/share/pinkwah/doom-emacs";
       emacs = pkgs.${pname};
       lspUsePlists = true;
+      extraPackages = epkgs: [ epkgs.treesit-grammars.with-all-grammars ];
     };
 
   in {
