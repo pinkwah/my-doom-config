@@ -1,0 +1,137 @@
+{
+  "nodes": {
+    "doom-emacs": {
+      "inputs": {
+        "doomemacs": "doomemacs",
+        "emacs-overlay": "emacs-overlay",
+        "nixpkgs": [],
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1768121037,
+        "narHash": "sha256-XmSEsrxl35IJ4DpN78bdUnA4pGeiG0ws63T9GRQWfec=",
+        "owner": "marienz",
+        "repo": "nix-doom-emacs-unstraightened",
+        "rev": "00c63be6c3acb8c94c7408bd844a7e2ac170f832",
+        "type": "github"
+      },
+      "original": {
+        "owner": "marienz",
+        "repo": "nix-doom-emacs-unstraightened",
+        "type": "github"
+      }
+    },
+    "doomemacs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767773143,
+        "narHash": "sha256-QL/t9v2kFNxBDyNJb/s411o3mxujan+QX5IZglTdpTk=",
+        "owner": "doomemacs",
+        "repo": "doomemacs",
+        "rev": "3e15fb36d7f94f0a218bda977be4d3f5da983a71",
+        "type": "github"
+      },
+      "original": {
+        "owner": "doomemacs",
+        "repo": "doomemacs",
+        "type": "github"
+      }
+    },
+    "emacs-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "doom-emacs"
+        ],
+        "nixpkgs-stable": [
+          "doom-emacs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768099053,
+        "narHash": "sha256-xRpjjgMIfAmWTsEb/lSx4uDmylt2NUo4hZwe7fUGdLI=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "9b322556dbd6b602a3f0be434663cfc612618d0c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1768165233,
+        "narHash": "sha256-1Luqz1JQiv6DIYR7bDnXcCr+NZf+zx3QG2TMYyKJZes=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "1b6335c11840e8c805bc4958396997161ee2d4b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "doom-emacs": "doom-emacs",
+        "nixpkgs": "nixpkgs",
+        "tree-sitter-astro-src": "tree-sitter-astro-src",
+        "tree-sitter-bicep-src": "tree-sitter-bicep-src"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "tree-sitter-astro-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745424178,
+        "narHash": "sha256-TpXs3jbYn39EHxTdtSfR7wLA1L8v9uyK/ATPp5v4WqE=",
+        "owner": "virchau13",
+        "repo": "tree-sitter-astro",
+        "rev": "213f6e6973d9b456c6e50e86f19f66877e7ef0ee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "virchau13",
+        "repo": "tree-sitter-astro",
+        "type": "github"
+      }
+    },
+    "tree-sitter-bicep-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734837732,
+        "narHash": "sha256-+qvhJgYqs8aj/Kmojr7lmjbXmskwVvbYBn4ia9wOv3k=",
+        "owner": "tree-sitter-grammars",
+        "repo": "tree-sitter-bicep",
+        "rev": "bff59884307c0ab009bd5e81afd9324b46a6c0f9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tree-sitter-grammars",
+        "repo": "tree-sitter-bicep",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
