@@ -4,9 +4,15 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=release-25.11";
 
+    doomemacs-src = {
+      url = "github:doomemacs/doomemacs";
+      flake = false;
+    };
+
     doom-emacs = {
       url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "";
+      inputs.doomemacs.follows = "doomemacs-src";
     };
 
     tree-sitter-astro-src = {
@@ -58,6 +64,21 @@
     };
 
   in {
+    devShells.x86_64-linux.default =
+      let
+        pkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
+        lib = pkgs.lib;
+      in pkgs.mkShell {
+        name = "pinkwah-doom-emacs-env";
+
+        shellHook = ''
+          export EMACS="${lib.getExe pkgs.emacs30}"
+          export EMACSDIR="${inputs.doomemacs-src}"
+          export DOOMDIR="$PWD"
+          export DOOMLOCALDIR="$PWD/_tmp/doom-local"
+        '';
+    };
+
     packages.x86_64-linux.default = doom-emacs "x86_64-linux" "emacs30-pgtk";
     packages.x86_64-linux.emacs = doom-emacs "x86_64-linux" "emacs30";
     packages.aarch64-linux.default = doom-emacs "aarch64-linux" "emacs30-pgtk";

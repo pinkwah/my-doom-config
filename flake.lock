@@ -2,7 +2,9 @@
   "nodes": {
     "doom-emacs": {
       "inputs": {
-        "doomemacs": "doomemacs",
+        "doomemacs": [
+          "doomemacs-src"
+        ],
         "emacs-overlay": "emacs-overlay",
         "nixpkgs": [],
         "systems": "systems"
@@ -21,14 +23,14 @@
         "type": "github"
       }
     },
-    "doomemacs": {
+    "doomemacs-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1767773143,
-        "narHash": "sha256-QL/t9v2kFNxBDyNJb/s411o3mxujan+QX5IZglTdpTk=",
+        "lastModified": 1768984347,
+        "narHash": "sha256-VvC4rgAAaFnYLCdcUoz7dTE3kuBNuHIc+GlXOrPCxpg=",
         "owner": "doomemacs",
         "repo": "doomemacs",
-        "rev": "3e15fb36d7f94f0a218bda977be4d3f5da983a71",
+        "rev": "57818a6da90fbef39ff80d62fab2cd319496c3b9",
         "type": "github"
       },
       "original": {
@@ -79,6 +81,7 @@
     "root": {
       "inputs": {
         "doom-emacs": "doom-emacs",
+        "doomemacs-src": "doomemacs-src",
         "nixpkgs": "nixpkgs",
         "tree-sitter-astro-src": "tree-sitter-astro-src",
         "tree-sitter-bicep-src": "tree-sitter-bicep-src"

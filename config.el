@@ -175,11 +175,6 @@
 
 (setq! lsp-enable-suggest-server-download nil)
 
-(use-package! lsp-tailwindcss
-  :after lsp-mode
-  :init
-  (setq! lsp-tailwindcss-add-on-mode t))
-
 (use-package! lsp-pyright
   :custom (lsp-pyright-langserver-command "basedpyright"))
 
@@ -203,3 +198,11 @@
 (use-package! ef-themes
   :init (ef-themes-take-over-modues-themes-mode 1)
   :config (setq modus-themes-mixed-fonts t modues-themes-italic-constructs t))
+
+(after! lsp-mode
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection (lambda () `("tailwindcss-language-server" "--stdio")))
+    :add-on? t
+    :priority -1
+    :server-id 'tailwindcss)))
